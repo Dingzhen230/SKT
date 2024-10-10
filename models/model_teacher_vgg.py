@@ -19,9 +19,9 @@ class CSRNet(nn.Module):
         self._initialize_weights()
         self.features = []
         if pretrained:
-            print 'load vgg pretrained model'
+            print('load vgg pretrained model')
             mod = models.vgg16(pretrained=True)
-            for i in xrange(len(self.frontend.state_dict().items())):
+            for i in range(0, len(self.frontend.state_dict().items())):
                 self.frontend.state_dict().items()[i][1].data[:] = mod.state_dict().items()[i][1].data[:]
 
     def forward(self, x):

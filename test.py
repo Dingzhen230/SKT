@@ -57,15 +57,15 @@ def main():
     torch.cuda.manual_seed(args.seed)
 
     if args.version == 'vgg':
-        print 'VGG'
+        print('VGG')
         model = CSRNet_vgg(pretrained=False)
-        print model
+        print(model)
         cal_para(model)
 
     elif args.version == 'quarter_vgg':
-        print 'quarter_VGG'
+        print('quarter_VGG')
         model = CSRNet_student(ratio=4, transform=args.transform)
-        print model
+        print(model)
         cal_para(model)  # including 1x1conv transform layer that can be removed
     else:
         raise NotImplementedError()
@@ -129,7 +129,7 @@ def test(test_list, model):
 
 
 def test_ucf(test_list, model):
-    print 'begin test'
+    print('begin test')
     test_loader = torch.utils.data.DataLoader(
         dataset.listDataset(test_list,
                             transform=transforms.Compose([

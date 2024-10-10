@@ -41,5 +41,5 @@ if __name__ == '__main__':
     get_train(root)
     get_val(root)
     get_test(root)
-    print 'Finish!'
+    print('Finish!')
 
